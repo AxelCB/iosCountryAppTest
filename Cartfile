@@ -1,0 +1,14 @@
+# Require Alamofire 4 or later but less than 5.0
+github "Alamofire/Alamofire" ~> 4.0
+
+# Require latest version of SwiftyJSON	
+github "SwiftyJSON/SwiftyJSON"
+
+# Require Objectmapper 2 or later but less than 3.0
+github "Hearst-DD/ObjectMapper" ~> 2.0
+
+# Require AlamofireObjectMapper
+github "tristanhimmelman/AlamofireObjectMapper" ~> 4.0
+
+# Require AlamofireImage
+github "Alamofire/AlamofireImage" ~> 3.1

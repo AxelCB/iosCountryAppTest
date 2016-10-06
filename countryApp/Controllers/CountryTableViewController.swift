@@ -11,6 +11,7 @@ import UIKit
 class CountryTableViewController: UITableViewController {
     
     var countries = NSMutableArray()
+    let countryStore = CountryStore()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,114 +30,51 @@ class CountryTableViewController: UITableViewController {
 
     // MARK: - Table view data source
 
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
 
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return countries.count
     }
     
-    override func viewWillAppear(animated: Bool) {
-        let countriesUrl = NSURL(string:"https://restcountries.eu/rest/v1/all")!
-        let task = NSURLSession.sharedSession().dataTaskWithURL(countriesUrl){ (data,response,error) in
-            if error == nil{
-                if let data = data {
-                    var parsedResult = AnyObject?()
-                    let countriesArrayToAssign = NSMutableArray()
-                    do{
-                        parsedResult=try NSJSONSerialization.JSONObjectWithData(data, options: .AllowFragments)
-                    }catch{
-                        print("Could not parse data")
-                        return
-                    }
-                    print(parsedResult)
-                    if let countriesArray = parsedResult as? [AnyObject]{
-                        for countryJSON in countriesArray{
-                            countriesArrayToAssign.addObject(Country(json: countryJSON))
-                        }
-                    }
-                    self.performUIUpdatesOnMain({
-                        self.countries=countriesArrayToAssign
-                        self.tableView.reloadData()
-                    })
-                }
-            }
-        }
-        task.resume();
-        /*
-        let country = Country(name: "Argentina",code: "AR")
-        self.countries.addObject(country)
-        let country2 = Country(name: "Brazil",code: "BR")
-        self.countries.addObject(country2)
-        */
+    override func viewWillAppear(_ animated: Bool) {
+        countryStore.allCountries(completionHandler: { (result,error) in
+            self.countries.removeAllObjects()
+            self.countries.addObjects(from: result)
+            self.tableView.reloadData()
+        })
     }
 
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("country", forIndexPath: indexPath)
-        let country = countries[indexPath.row] as? Country
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "country", for: indexPath)
+        let country = countries[(indexPath as NSIndexPath).row] as? Country
         cell.textLabel?.text=country?.name
         // Configure the cell...
 
         return cell
     }
 
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
         if(segue.identifier=="showCountryDetails"){
-            if let detailController = segue.destinationViewController as? CountryDetailViewController{
+            if let detailController = segue.destination as? CountryDetailViewController{
                 detailController.country=sender as? Country
             }
         }
     }
     
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        self.performSegueWithIdentifier("showCountryDetails", sender: countries[indexPath.row])
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.performSegue(withIdentifier: "showCountryDetails", sender: countries[(indexPath as NSIndexPath).row])
     }
     
     //MUST REMOVE
-    private func performUIUpdatesOnMain(updates: () -> Void) {
-        dispatch_async(dispatch_get_main_queue()) {
+    fileprivate func performUIUpdatesOnMain(_ updates: @escaping () -> Void) {
+        DispatchQueue.main.async {
             updates()
         }
     }

@@ -12,6 +12,8 @@ class CountryDetailViewController: UIViewController {
 
     var country : Country?
     @IBOutlet weak var countryTitle: UILabel!
+    @IBOutlet weak var countryFlagImageView: UIImageView!
+    let countryStore = CountryStore()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,7 +37,17 @@ class CountryDetailViewController: UIViewController {
     }
     */
     
-    override func viewWillAppear(animated: Bool) {
-        self.countryTitle.text=country?.name
+    override func viewWillAppear(_ animated: Bool) {
+        countryStore.countryFlag(url: "https://github.com/hjnilsson/country-flags/blob/master/png250px/"+(country?.code?.lowercased())!+".png?raw=true", completionHandler: { (imageData) in
+            self.countryFlagImageView.image=UIImage(data: imageData)
+            self.countryTitle.text=self.country?.name
+        })
+        
+    }
+    
+    fileprivate func performUIUpdatesOnMain(_ updates: @escaping () -> Void) {
+        DispatchQueue.main.async {
+            updates()
+        }
     }
 }

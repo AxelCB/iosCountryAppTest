@@ -7,15 +7,16 @@
 //
 
 import UIKit
+import ObjectMapper
 
-class Country: NSObject {
-    let name : String
-    let code : String
+class Country : Mappable, CustomStringConvertible, CustomDebugStringConvertible {
+    var name : String?
+    var code : String?
     
     init(json : AnyObject){
         if let countriesPropertiesDictionary = json as? [String:AnyObject]{
-            self.name=countriesPropertiesDictionary["name"] as! String
-            self.code=countriesPropertiesDictionary["alpha2Code"] as! String
+            self.name=countriesPropertiesDictionary["name"] as? String
+            self.code=countriesPropertiesDictionary["alpha2Code"] as? String
         }else{
             self.name="Wrong JSON"
             self.code="WJSON"
@@ -27,4 +28,20 @@ class Country: NSObject {
         self.code = code
     }
     
+    /// This function is where all variable mappings should occur. It is executed by Mapper during the mapping (serialization and deserialization) process.
+    public func mapping(map: Map) {
+        name <- map["name"]
+        code <- map["alpha2Code"]
+    }
+    
+    required init?(map: Map) {
+        
+    }
+    
+    public var description: String {
+        return "\(code) - \(name)"
+    }
+    public var debugDescription: String {
+        return "\(code) - \(name)"
+    }
 }

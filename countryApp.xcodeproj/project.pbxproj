@@ -7,16 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A12E12A01DA5BB7300CA51D6 /* AlamofireObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A12E129F1DA5BB7300CA51D6 /* AlamofireObjectMapper.framework */; };
+		A12E12A21DA5ECF700CA51D6 /* AlamofireImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A12E12A11DA5ECF700CA51D6 /* AlamofireImage.framework */; };
 		A1469DCC1D7677CB001005E2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1469DCB1D7677CB001005E2 /* AppDelegate.swift */; };
 		A1469DD11D7677CB001005E2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1469DCF1D7677CB001005E2 /* Main.storyboard */; };
 		A1469DD31D7677CB001005E2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1469DD21D7677CB001005E2 /* Assets.xcassets */; };
 		A1469DD61D7677CB001005E2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1469DD41D7677CB001005E2 /* LaunchScreen.storyboard */; };
 		A1469DE11D767A08001005E2 /* CountryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1469DE01D767A08001005E2 /* CountryTableViewController.swift */; };
+		A15D1A9A1D9C813E003FA5D1 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A15D1A991D9C813E003FA5D1 /* SwiftyJSON.framework */; };
+		A15D1A9D1D9C8A4A003FA5D1 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15D1A9C1D9C8A4A003FA5D1 /* Constants.swift */; };
+		A15D1AA31D9CA4F0003FA5D1 /* CountryStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15D1AA21D9CA4F0003FA5D1 /* CountryStore.swift */; };
 		A1CB36211D77917600F8319C /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1CB36201D77917600F8319C /* Country.swift */; };
 		A1D6BB561D78EEC800FA7F61 /* CountryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D6BB551D78EEC800FA7F61 /* CountryDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A12E129F1DA5BB7300CA51D6 /* AlamofireObjectMapper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AlamofireObjectMapper.framework; path = Carthage/Build/iOS/AlamofireObjectMapper.framework; sourceTree = "<group>"; };
+		A12E12A11DA5ECF700CA51D6 /* AlamofireImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AlamofireImage.framework; path = Carthage/Build/iOS/AlamofireImage.framework; sourceTree = "<group>"; };
 		A1469DC81D7677CB001005E2 /* countryApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = countryApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1469DCB1D7677CB001005E2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A1469DD01D7677CB001005E2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -24,6 +31,9 @@
 		A1469DD51D7677CB001005E2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A1469DD71D7677CB001005E2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A1469DE01D767A08001005E2 /* CountryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountryTableViewController.swift; sourceTree = "<group>"; };
+		A15D1A991D9C813E003FA5D1 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
+		A15D1A9C1D9C8A4A003FA5D1 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		A15D1AA21D9CA4F0003FA5D1 /* CountryStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountryStore.swift; sourceTree = "<group>"; };
 		A1CB36201D77917600F8319C /* Country.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
 		A1D6BB551D78EEC800FA7F61 /* CountryDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountryDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -33,6 +43,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A12E12A21DA5ECF700CA51D6 /* AlamofireImage.framework in Frameworks */,
+				A12E12A01DA5BB7300CA51D6 /* AlamofireObjectMapper.framework in Frameworks */,
+				A15D1A9A1D9C813E003FA5D1 /* SwiftyJSON.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,6 +57,7 @@
 			children = (
 				A1469DCA1D7677CB001005E2 /* countryApp */,
 				A1469DC91D7677CB001005E2 /* Products */,
+				A15D1A921D9C80D2003FA5D1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,6 +72,7 @@
 		A1469DCA1D7677CB001005E2 /* countryApp */ = {
 			isa = PBXGroup;
 			children = (
+				A15D1A9F1D9CA15B003FA5D1 /* Stores */,
 				A1469DDF1D7677E1001005E2 /* Views */,
 				A1469DDE1D7677D9001005E2 /* Models */,
 				A1469DDD1D7677D3001005E2 /* Controllers */,
@@ -66,6 +81,7 @@
 				A1469DD21D7677CB001005E2 /* Assets.xcassets */,
 				A1469DD41D7677CB001005E2 /* LaunchScreen.storyboard */,
 				A1469DD71D7677CB001005E2 /* Info.plist */,
+				A15D1A9C1D9C8A4A003FA5D1 /* Constants.swift */,
 			);
 			path = countryApp;
 			sourceTree = "<group>";
@@ -94,6 +110,24 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		A15D1A921D9C80D2003FA5D1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A12E12A11DA5ECF700CA51D6 /* AlamofireImage.framework */,
+				A12E129F1DA5BB7300CA51D6 /* AlamofireObjectMapper.framework */,
+				A15D1A991D9C813E003FA5D1 /* SwiftyJSON.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A15D1A9F1D9CA15B003FA5D1 /* Stores */ = {
+			isa = PBXGroup;
+			children = (
+				A15D1AA21D9CA4F0003FA5D1 /* CountryStore.swift */,
+			);
+			path = Stores;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -104,6 +138,7 @@
 				A1469DC41D7677CB001005E2 /* Sources */,
 				A1469DC51D7677CB001005E2 /* Frameworks */,
 				A1469DC61D7677CB001005E2 /* Resources */,
+				A15D1A9B1D9C81A4003FA5D1 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -121,11 +156,13 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = "Axel Collard Bovy";
 				TargetAttributes = {
 					A1469DC71D7677CB001005E2 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = JV4X47B76U;
+						LastSwiftMigration = 0800;
 					};
 				};
 			};
@@ -160,14 +197,35 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		A15D1A9B1D9C81A4003FA5D1 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/AlamofireObjectMapper.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/SwiftyJSON.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/AlamofireImage.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		A1469DC41D7677CB001005E2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A15D1A9D1D9C8A4A003FA5D1 /* Constants.swift in Sources */,
 				A1469DE11D767A08001005E2 /* CountryTableViewController.swift in Sources */,
 				A1CB36211D77917600F8319C /* Country.swift in Sources */,
 				A1D6BB561D78EEC800FA7F61 /* CountryDetailViewController.swift in Sources */,
+				A15D1AA31D9CA4F0003FA5D1 /* CountryStore.swift in Sources */,
 				A1469DCC1D7677CB001005E2 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -208,8 +266,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -253,8 +313,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -273,6 +335,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -281,10 +344,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = JV4X47B76U;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = countryApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = org.kairos.countryApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -292,10 +361,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = JV4X47B76U;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = countryApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = org.kairos.countryApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
